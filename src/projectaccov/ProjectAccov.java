@@ -5,6 +5,8 @@
  */
 package projectaccov;
 
+import java.util.Random;
+
 /**
  *
  * @author Sara
@@ -16,6 +18,10 @@ public class ProjectAccov {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String[] colors = {"Bleu", "Jaune", "Rouge"};
+        for (int i = 0; i < 10; i++) {
+            Cameleons c = new Cameleons(new Mail(),new IdCameleon(i), new Couleur(colors[new Random().nextInt(colors.length)]));
+            new Thread(c).start();
+        }
     }
-    
 }
